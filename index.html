@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        function generateResult() {
+            const periodInput = document.getElementById('period').value;
+            if (periodInput.length === 3) {
+                document.getElementById('result').innerText = 'Loading...';
+                setTimeout(() => {
+                    const resultText = Math.random() < 0.5 ? 'Result - SMALL' : 'Result - BIG';
+                    document.getElementById('result').innerText = resultText;
+                }, 2000); // 2 seconds delay
+            } else {
+                document.getElementById('result').innerText = '';
+            }
+        }
+    </script>
+</head>
+<body class="bg-white flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg">
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">WIN GO 🚀</h1>
+        </div>
+        <div class="mb-6">
+            <label for="period" class="block text-gray-700 text-sm font-medium mb-2">Enter Period</label>
+            <input 
+                type="text" 
+                id="period" 
+                maxlength="3" 
+                class="w-full py-2 px-3 border rounded-lg text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" 
+                oninput="generateResult()" 
+                placeholder="Enter 3 characters">
+        </div>
+        <div class="bg-gradient-to-r from-purple-500 to-blue-500 p-4 rounded-lg text-center mb-6">
+            <p id="result" class="text-lg font-bold text-white"></p>
+        </div>
+        <div class="text-center">
+            <a 
+                href="https://t.me/ShreeTools" 
+                class="block bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-3 px-6 rounded-full shadow-md hover:opacity-90 transition-all">
+                JOIN TELEGRAM
+            </a>
+        </div>
+    </div>
+</body>
+</html>
